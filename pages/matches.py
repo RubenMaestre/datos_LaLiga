@@ -1,5 +1,5 @@
 import streamlit as st
 
-def app():
+def display():
     st.title('Vista partidos')
-    st.write('Aquí vendrá toda la información y visualizaciones de partidos.')
+    # Aquí iría el resto de tu código para esta página

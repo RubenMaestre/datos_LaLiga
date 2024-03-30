@@ -1,6 +1,5 @@
-# pages/overview.py
 import streamlit as st
 
-def app():
-    st.title('Vista General del Análisis de Fútbol')
-    st.write('Aquí vendrá toda la información y visualizaciones de la vista general.')
+def display():
+    st.title('Vista General')
+    # Aquí iría el resto de tu código para esta página
