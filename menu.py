@@ -1,6 +1,6 @@
 # menu.py
 import streamlit as st
-from pages import home, overview, teams, players, matches
+from pages import home
 
 def create_sidebar():
     with open('styles/custom_styles.css') as f:
@@ -8,10 +8,10 @@ def create_sidebar():
 
     menu_items = {
         "🏠 Inicio": home.display,
-        "📊 Overview": overview.display,
-        "⚽ Equipos": teams.display,
-        "👥 Jugadores": players.display,
-        "🏟 Partidos": matches.display,
+        #"📊 Overview": overview.display,
+        #"⚽ Equipos": teams.display,
+        #"👥 Jugadores": players.display,
+        #"🏟 Partidos": matches.display,
     }
 
     st.sidebar.title("Menú")
