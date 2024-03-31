@@ -2,7 +2,7 @@
 import streamlit as st
 
 def display():
-    # Imagen de cabecera
+    # Asegúrate de que la ruta a la imagen esté correcta y sea accesible
     st.image("sources/cabecera.jpg", use_column_width=True, height=300)
 
     # Título de bienvenida
