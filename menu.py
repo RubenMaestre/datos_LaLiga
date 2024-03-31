@@ -7,7 +7,7 @@ def create_sidebar():
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
     menu_items = {
-        "🏠 Inicio": home.display,
+        "🏠 Inicio": inicio.display,
         "📊 Overview": overview.display,
         "⚽ Equipos": teams.display,
         "👥 Jugadores": players.display,
