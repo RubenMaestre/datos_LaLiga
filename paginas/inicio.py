@@ -3,7 +3,7 @@ import streamlit as st
 
 def display():
     # Asegúrate de que la ruta a la imagen esté correcta y sea accesible
-    st.image("sources\cabecera.jpg", height=300)
+    #st.image("sources\cabecera.jpg", use_column_width=True, height=300)
 
     # Título de bienvenida
     st.title("Bienvenidos a la página de datos de LaLiga")
