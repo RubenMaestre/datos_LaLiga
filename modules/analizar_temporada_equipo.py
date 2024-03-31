@@ -37,13 +37,13 @@ def analizar_temporada_equipo(df_equipos):
     color = 'blue' if 'LaLiga1' in division_seleccionada else 'green'
 
     # Crear la gráfica
-    plt.figure(figsize=(10, 6))
-    plt.bar(df_equipo['id_temporada'], df_equipo['posicion_liga'].fillna(23), color=color)
-    plt.gca().invert_yaxis()  # Invertir eje Y para que la posición 1 esté arriba
-    plt.title(f'Posición de {equipo_seleccionado} en la Temporada {temporada_seleccionada}')
-    plt.xlabel('Temporada')
-    plt.ylabel('Posición en Liga')
-    plt.xticks(rotation=45)
-    plt.ylim(1, 23)  # Ajustar límites del eje Y
+    #plt.figure(figsize=(10, 6))
+    #plt.bar(df_equipo['id_temporada'], df_equipo['posicion_liga'].fillna(23), color=color)
+    #plt.gca().invert_yaxis()  # Invertir eje Y para que la posición 1 esté arriba
+    #plt.title(f'Posición de {equipo_seleccionado} en la Temporada {temporada_seleccionada}')
+    #plt.xlabel('Temporada')
+    #plt.ylabel('Posición en Liga')
+    #plt.xticks(rotation=45)
+    #plt.ylim(1, 23)  # Ajustar límites del eje Y
 
-    st.pyplot(plt)
+    #st.pyplot(plt)
