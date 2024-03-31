@@ -26,6 +26,8 @@ def create_sidebar():
         </style>
         """, unsafe_allow_html=True)
 
+    st.sidebar.markdown(f'<div class="imagen-logo"><img src="{logo_path}" alt="Logo"></div>', unsafe_allow_html=True)
+
     st.sidebar.image(logo_path, width=200)  # Ajusta el ancho si es necesario
     # Usamos un div con la clase 'titulo' para aplicar los estilos al título
     st.sidebar.markdown('<div class="titulo">Rubén Maestre</div>', unsafe_allow_html=True)
