@@ -17,10 +17,11 @@ def create_sidebar():
                 padding-top: 20px;
                 text-align: center;
             }
-                .logo {
-                display: flex;
-                justify-content: center; 
-                padding-bottom: 20px; 
+                .imagen-logo {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;
             }
         </style>
         """, unsafe_allow_html=True)
@@ -28,8 +29,6 @@ def create_sidebar():
     st.sidebar.image(logo_path, width=200)  # Ajusta el ancho si es necesario
     # Usamos un div con la clase 'titulo' para aplicar los estilos al título
     st.sidebar.markdown('<div class="titulo">Rubén Maestre</div>', unsafe_allow_html=True)
-
-    st.sidebar.title("Menú")
 
     menu_items = {
         "🏠 Inicio": inicio.display,
