@@ -3,42 +3,27 @@ import streamlit as st
 from paginas import inicio, overview, teams, players, matches
 
 def create_sidebar():
-    # Define tus estilos CSS aquí directamente
+    logo_path = 'sources/logo.jpg'
+
+    with open('styles/custom_styles.css') as f:
+        st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
     st.markdown("""
         <style>
-            /* Estilos generales del sidebar */
-            .css-1lcbmhc {
-                background-color: #000; /* fondo negro */
-                color: white; /* texto en blanco */
-            }
-            /* Estilos de los botones del sidebar para que parezcan enlaces de menú */
-            .css-1lcbmhc .stButton>button {
-                width: 100%;
-                border-radius: 0;
-                border: none;
-                background-color: transparent;
+            .titulo {
+                font-weight: bold;
                 color: white;
-                padding: 10px 0;
-                text-align: left;
-                font-size: 16px;
-            }
-            /* Cambia el color de fondo del botón en hover */
-            .css-1lcbmhc .stButton>button:hover {
-                background-color: #333; /* Un poco más claro que el fondo negro */
-            }
-            /* Estilos para el título del menú en el sidebar */
-            .css-1lcbmhc .sidebar-content h1 {
-                color: white; /* Color del título */
-                font-size: 25px; /* Tamaño del título */
-                margin-bottom: 30px; /* Espacio debajo del título */
-            }
-            /* Estilos para modificar la imagen (icono del menú) */
-            .css-1lcbmhc img {
-                max-width: 50px; /* Cambiar según el tamaño deseado */
-                margin-bottom: 20px; /* Espacio debajo del logo */
+                padding-top: 20px;
+                text-align: center;
             }
         </style>
-    """, unsafe_allow_html=True)
+        """, unsafe_allow_html=True)
+
+    st.sidebar.image(logo_path, width=200)  # Ajusta el ancho si es necesario
+    # Usamos un div con la clase 'titulo' para aplicar los estilos al título
+    st.sidebar.markdown('<div class="titulo">Rubén Maestre</div>', unsafe_allow_html=True)
+
+    st.sidebar.title("Menú")
 
     menu_items = {
         "🏠 Inicio": inicio.display,
