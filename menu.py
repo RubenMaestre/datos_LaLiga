@@ -3,7 +3,7 @@ import streamlit as st
 from paginas import inicio, overview, teams, players, matches
 
 def create_sidebar():
-    logo_path = 'sources/logo.jpg'
+    logo_path = 'sources/logo.png'
 
     with open('styles/custom_styles.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
