@@ -1,5 +1,5 @@
 import streamlit as st
-from modules import analizar_temporada_equipo
+from modules.analizar_temporada_equipo import analizar_temporada_equipo
 import pandas as pd
 
 def display():
