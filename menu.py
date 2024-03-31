@@ -19,8 +19,8 @@ def create_sidebar():
             }
                 .imagen-logo {
                 display: block;
-                margin-left: auto;
-                margin-right: auto;
+                margin-left: 100px;
+                margin-right: 100px;
                 width: 30%;
             }
         </style>
