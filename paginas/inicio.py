@@ -10,7 +10,7 @@ def display():
 
     # Texto introductorio
     st.markdown("""
-        ### Proyecto de Análisis de LaLiga por Rubén Maestre
+        ### Proyecto de análisis de LaLiga por Rubén Maestre
 
         Este espacio está dedicado a compartir un exhaustivo análisis de las temporadas 2010/2011 hasta la 
         actualidad de las principales competiciones de fútbol en España: La Primera División, La Segunda 
@@ -24,7 +24,7 @@ def display():
     
     with col1:
         st.markdown("""
-            #### Sobre el Proyecto
+            #### Sobre el proyecto
 
             Este proyecto nace de mi pasión por el fútbol y por el análisis de datos. Lo que empezó como un 
             hobby se ha convertido en una minuciosa recopilación de datos que quiero compartir con la comunidad. 
@@ -35,7 +35,7 @@ def display():
     
     with col2:
         st.markdown("""
-            #### Descubrimientos y Datos Curiosos
+            #### Descubrimientos y datos curiosos
 
             Este análisis ha permitido descubrir tendencias y patrones como qué equipo recibe más goles o tarjetas 
             en los últimos 15 minutos de partido, algo crucial para entender los momentos críticos de un encuentro. 
@@ -45,7 +45,7 @@ def display():
 
     st.markdown("""
         ---
-        #### Mi Formación y Herramientas Utilizadas
+        #### Mi formación y herramientas utilizadas
 
         Tras mi formación en la escuela HACK A BOSS en Data Science e Inteligencia Artificial, he adquirido las 
         habilidades necesarias para manejar con destreza herramientas como Python, Pandas y Plotly. La combinación 
