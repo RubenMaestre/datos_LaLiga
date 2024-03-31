@@ -12,9 +12,15 @@ def create_sidebar():
         <style>
             .titulo {
                 font-weight: bold;
-                color: white;
+                color: black;
+                font-size: 32px;
                 padding-top: 20px;
                 text-align: center;
+            }
+                .logo {
+                display: flex;
+                justify-content: center; 
+                padding-bottom: 20px; 
             }
         </style>
         """, unsafe_allow_html=True)
