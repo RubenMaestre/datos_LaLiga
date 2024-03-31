@@ -32,7 +32,7 @@ def create_sidebar():
 
     menu_items = {
         "🏠 Inicio": inicio.display,
-        "📊 Overview": overview.display,
+        "📊 Datos generales": overview.display,
         "⚽ Equipos": teams.display,
         "👥 Jugadores": players.display,
         "🏟 Partidos": matches.display,
