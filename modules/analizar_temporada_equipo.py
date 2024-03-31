@@ -30,20 +30,26 @@ def analizar_temporada_equipo(df_equipos):
     # Obtener id_equipo basado en nombre_equipo seleccionado
     id_equipo_seleccionado = df_filtrado[df_filtrado['nombre_equipo'] == equipo_seleccionado]['id_equipo'].iloc[0]
 
-    # Filtrar filas del equipo seleccionado
+        # Filtrar filas del equipo seleccionado
     df_equipo = df_filtrado[df_filtrado['id_equipo'] == id_equipo_seleccionado]
 
     # Configurar colores basados en la división
     color = 'blue' if 'LaLiga1' in division_seleccionada else 'green'
 
-    # Crear la gráfica
-    #plt.figure(figsize=(10, 6))
-    #plt.bar(df_equipo['id_temporada'], df_equipo['posicion_liga'].fillna(23), color=color)
-    #plt.gca().invert_yaxis()  # Invertir eje Y para que la posición 1 esté arriba
-    #plt.title(f'Posición de {equipo_seleccionado} en la Temporada {temporada_seleccionada}')
-    #plt.xlabel('Temporada')
-    #plt.ylabel('Posición en Liga')
-    #plt.xticks(rotation=45)
-    #plt.ylim(1, 23)  # Ajustar límites del eje Y
+    # Preparar los datos para la gráfica
+    df_equipo['posicion_liga'] = df_equipo['posicion_liga'].fillna(23)
+    
+    # Crear la gráfica con Plotly
+    fig = px.bar(df_equipo, x='id_temporada', y='posicion_liga', color_discrete_sequence=[color],
+                 title=f'Posición de {equipo_seleccionado} en la Temporada {temporada_seleccionada}',
+                 labels={'id_temporada': 'Temporada', 'posicion_liga': 'Posición en Liga'})
+    
+    # Invertir eje Y para que la posición 1 esté arriba
+    fig.update_yaxes(autorange="reversed")
+    
+    # Ajustar límites del eje Y y mejorar la apariencia
+    fig.update_yaxes(range=[1, 23], tickmode='array', tickvals=list(range(1, 24)))
+    fig.update_layout(yaxis_tickformat = 'd')
 
-    #st.pyplot(plt)
+    # Mostrar la gráfica
+    st.plotly_chart(fig, use_container_width=True)
