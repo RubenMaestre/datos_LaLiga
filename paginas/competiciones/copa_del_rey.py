@@ -2,14 +2,13 @@
 import streamlit as st
 import pandas as pd
 
-def display(año):
-    st.title(f'Copa del Rey - Temporada {año}/{año+1}')
+# Cargar el DataFrame de temporadas
+df_temporadas = pd.read_pickle('data/df_temporadas.pkl')
 
-    # Aquí cargamos los datos específicos de la Copa del Rey para el año seleccionado
-    # Supongamos que tienes un DataFrame con datos de la Copa del Rey por año
-    df_copa = pd.read_pickle('data/df_copa.pkl')
-    df_seleccionado = df_copa[df_copa['season'] == f'{año}/{año+1}']
+def display(año):
+    st.title(f'Copa del Rey - Temporada {año}')
+
+    # Filtrar los datos para la Copa del Rey y la temporada seleccionada
+    df_seleccionado = df_temporadas[(df_temporadas['id_competicion'] == 'CopaReyESP') & (df_temporadas['temporada'] == año)]
 
     st.write(df_seleccionado)
-
-display()
