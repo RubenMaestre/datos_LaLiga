@@ -27,6 +27,9 @@ def display(año, df_temporadas, df_equipos):
         'diferencia_goles': 'DFG'
     }, inplace=True)
 
+    # Resetear el índice para eliminar la columna de índice
+    df_equipos_ordenados.reset_index(drop=True, inplace=True)
+
     # Datos de estadísticas generales
     col1, col2 = st.columns([1, 3])
 
@@ -44,5 +47,4 @@ def display(año, df_temporadas, df_equipos):
 
     with col2:
         st.subheader("Clasificación de Equipos")
-        st.dataframe(df_equipos_ordenados[['escudos', 'Posición', 'Equipo', 'Puntos', 'victorias', 'empates', 'derrotas', 'GF', 'GC', 'DFG']], height=700, use_container_width=True)
-
+        st.dataframe(df_equipos_ordenados[['escudos', 'Posición', 'Equipo', 'Puntos', 'victorias', 'empates', 'derrotas', 'GF', 'GC', 'DFG']], height=720, use_container_width=True)
