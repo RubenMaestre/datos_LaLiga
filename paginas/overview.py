@@ -26,8 +26,15 @@ def display():
 
     with col2:
         if competicion != "Selecciona una":
+            # Mapear el nombre de la competición al id_competicion
+            id_competicion_map = {
+                "Primera División": "LaLiga1",
+                "Segunda División": "LaLiga2",
+                "Copa del Rey": "CopaReyESP",
+                "Supercopa": "SuperCopaESP"
+            }
+            id_competicion = id_competicion_map.get(competicion, "")
             # Filtrar los años disponibles para la competición seleccionada
-            id_competicion = competicion.replace(" ", "")
             df_filtrado = df_temporadas[df_temporadas['id_competicion'] == id_competicion]
             años = df_filtrado['temporada'].unique()
             año = st.selectbox("Selecciona una temporada", años)
