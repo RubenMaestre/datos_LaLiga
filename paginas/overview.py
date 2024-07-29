@@ -3,8 +3,11 @@ import streamlit as st
 from paginas.competiciones import primera_division, segunda_division, copa_del_rey, supercopa
 import pandas as pd
 
-# Cargar el DataFrame de temporadas desde el archivo CSV
+# Cargar los DataFrames desde los archivos CSV
 df_temporadas = pd.read_csv('data/df_temporadas.csv')
+df_equipos = pd.read_csv('data/df_equipos.csv')
+df_jugadores = pd.read_csv('data/df_jugadores.csv')
+df_partidos = pd.read_csv('data/df_partidos.csv')
 
 def display():
     # Título de la página
@@ -45,12 +48,12 @@ def display():
 
     # Navegación dentro de la competición seleccionada
     if competicion == "Primera División":
-        primera_division.display(año)
+        primera_division.display(año, df_temporadas, df_equipos)
     elif competicion == "Segunda División":
-        segunda_division.display(año)
+        segunda_division.display(año, df_temporadas, df_equipos)
     elif competicion == "Copa del Rey":
-        copa_del_rey.display(año)
+        copa_del_rey.display(año, df_temporadas, df_equipos)
     elif competicion == "Supercopa":
-        supercopa.display(año)
+        supercopa.display(año, df_temporadas, df_equipos)
 
 display()
