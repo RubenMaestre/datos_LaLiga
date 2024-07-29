@@ -2,7 +2,11 @@ import streamlit as st
 from menu import create_sidebar
 
 # Configuraciones globales de la app, como el título y la configuración de la página
-st.set_page_config(page_title="Mi Proyecto Streamlit", layout="wide")
+st.set_page_config(
+    page_title="DataFútbol360",  # Cambia este título al que elijas
+    page_icon="sources/favicon.png",  # Asegúrate de que la ruta al favicon es correcta
+    layout="wide"
+)
 
 # Puedes llamar aquí a cualquier configuración global adicional si es necesario
 
