@@ -47,7 +47,7 @@ def display():
 
             Este proyecto surge de darle vueltas a crear cosas diferentes y enseñar mi trabajo, en este caso con algo que me apasiona como es el fútbol y el análisis de datos. Lo que empezó como un hobby se ha convertido en una minuciosa recopilación de datos que quiero compartir con la comunidad.
 
-Voy a ir creando secciones con ideas que pretendo que sean creativas. Por ejemplo, la idea de crear un chatbot especializado en información de fútbol de la liga española que le preguntes un dato y te lo diga. O por ejemplo, crear una sección donde busques un equipo o un jugador y te genere un informe con todos sus datos. También podría plantear la opción de un comparador de jugadores o equipos, cosas así.
+            Voy a ir creando secciones con ideas que pretendo que sean creativas. Por ejemplo, la idea de crear un chatbot especializado en información de fútbol de la liga española que le preguntes un dato y te lo diga. O por ejemplo, crear una sección donde busques un equipo o un jugador y te genere un informe con todos sus datos. También podría plantear la opción de un comparador de jugadores o equipos, cosas así.
 
         """)
     
