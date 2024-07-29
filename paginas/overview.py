@@ -2,6 +2,7 @@
 import streamlit as st
 from paginas.competiciones import primera_division, segunda_division, copa_del_rey, supercopa
 import pandas as pd
+import numpy as np
 
 # Cargar el DataFrame de temporadas
 df_temporadas = pd.read_pickle('data/df_temporadas.pkl')

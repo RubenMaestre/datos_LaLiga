@@ -1,6 +1,7 @@
 # paginas/competiciones/copa_del_rey.py
 import streamlit as st
 import pandas as pd
+import numpy as np
 
 # Cargar el DataFrame de temporadas
 df_temporadas = pd.read_pickle('data/df_temporadas.pkl')
