@@ -1,10 +1,9 @@
 # paginas/competiciones/primera_division.py
 import streamlit as st
 import pandas as pd
-import numpy as np
 
-# Cargar el DataFrame de temporadas
-df_temporadas = pd.read_pickle('data/df_temporadas.pkl')
+# Cargar el DataFrame de temporadas desde el archivo CSV
+df_temporadas = pd.read_csv('data/df_temporadas.csv')
 
 def display(año):
     st.title(f'Primera División - Temporada {año}')
