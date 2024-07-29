@@ -12,8 +12,20 @@ def display(año, df_temporadas, df_equipos):
     # Agregar columna de escudos con valores predeterminados
     df_equipos_seleccionados['escudos'] = '-'
 
+    # Calcular los puntos totales
+    df_equipos_seleccionados['Puntos'] = df_equipos_seleccionados['victorias'] * 3 + df_equipos_seleccionados['empates']
+
     # Ordenar equipos por posición en la liga
     df_equipos_ordenados = df_equipos_seleccionados.sort_values(by='posicion_liga')
+
+    # Renombrar columnas
+    df_equipos_ordenados.rename(columns={
+        'posicion_liga': 'Posición',
+        'nombre_equipo': 'Equipo',
+        'goles_marcados': 'GF',
+        'goles_concedidos': 'GC',
+        'diferencia_goles': 'DFG'
+    }, inplace=True)
 
     # Datos de estadísticas generales
     col1, col2 = st.columns([1, 3])
@@ -25,9 +37,12 @@ def display(año, df_temporadas, df_equipos):
         st.write(f"Número de clubes: {df_temporada_seleccionada['numero_de_clubes'].values[0]}")
         st.write(f"Total de partidos: {df_temporada_seleccionada['total_partidos'].values[0]}")
         st.write(f"Total de jornadas: {df_temporada_seleccionada['total_jornadas'].values[0]}")
-        st.write(f"Progreso: {df_temporada_seleccionada['progreso'].values[0]}")
+        st.write(f"Progreso: {df_temporada_seleccionada['progreso'].values[0]}%")
+        st.write(f"Promedio goles por partido: {df_temporada_seleccionada['promedio_goles_por_partido'].values[0]}")
+        st.write(f"Promedio tarjetas por partido: {df_temporada_seleccionada['promedio_tarjetas_por_partido'].values[0]}")
+        st.write(f"Promedio corners por partido: {df_temporada_seleccionada['promedio_corners_por_partido'].values[0]}")
 
     with col2:
         st.subheader("Clasificación de Equipos")
-        st.write(df_equipos_ordenados[['escudos', 'posicion_liga', 'nombre_equipo', 'puntos_por_partido', 'victorias', 'empates', 'derrotas', 'goles_marcados', 'goles_concedidos', 'diferencia_goles']])
+        st.write(df_equipos_ordenados[['escudos', 'Posición', 'Equipo', 'Puntos', 'victorias', 'empates', 'derrotas', 'GF', 'GC', 'DFG']].style.hide(axis='index'))
 
