@@ -21,15 +21,18 @@ def display():
 
     with col1:
         # Selectores de competición
-        competiciones = ["Primera División", "Segunda División", "Copa del Rey", "Supercopa"]
+        competiciones = ["Selecciona una", "Primera División", "Segunda División", "Copa del Rey", "Supercopa"]
         competicion = st.selectbox("Selecciona la competición", competiciones)
 
     with col2:
-        # Filtrar los años disponibles para la competición seleccionada
-        id_competicion = competicion.replace(" ", "")
-        df_filtrado = df_temporadas[df_temporadas['id_competicion'] == id_competicion]
-        años = df_filtrado['temporada'].unique()
-        año = st.selectbox("Selecciona el año", años)
+        if competicion != "Selecciona una":
+            # Filtrar los años disponibles para la competición seleccionada
+            id_competicion = competicion.replace(" ", "")
+            df_filtrado = df_temporadas[df_temporadas['id_competicion'] == id_competicion]
+            años = df_filtrado['temporada'].unique()
+            año = st.selectbox("Selecciona una temporada", años)
+        else:
+            año = st.selectbox("Selecciona una temporada", [])
 
     st.markdown("---")
 
