@@ -16,14 +16,20 @@ def display():
         Utiliza los selectores a continuación para explorar los datos específicos de cada competición y temporada.
     """)
 
-    # Selectores de competición y año
-    competiciones = ["Primera División", "Segunda División", "Copa del Rey", "Supercopa"]
-    competicion = st.selectbox("Selecciona la competición", competiciones)
+    # Dividir la interfaz en dos columnas para los selectores
+    col1, col2 = st.columns(2)
 
-    # Filtrar los años disponibles para la competición seleccionada
-    df_filtrado = df_temporadas[df_temporadas['id_competicion'] == competicion.replace(" ", "")]
-    años = df_filtrado['temporada'].unique()
-    año = st.selectbox("Selecciona el año", años)
+    with col1:
+        # Selectores de competición
+        competiciones = ["Primera División", "Segunda División", "Copa del Rey", "Supercopa"]
+        competicion = st.selectbox("Selecciona la competición", competiciones)
+
+    with col2:
+        # Filtrar los años disponibles para la competición seleccionada
+        id_competicion = competicion.replace(" ", "")
+        df_filtrado = df_temporadas[df_temporadas['id_competicion'] == id_competicion]
+        años = df_filtrado['temporada'].unique()
+        año = st.selectbox("Selecciona el año", años)
 
     st.markdown("---")
 
