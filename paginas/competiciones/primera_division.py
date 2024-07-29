@@ -44,5 +44,5 @@ def display(año, df_temporadas, df_equipos):
 
     with col2:
         st.subheader("Clasificación de Equipos")
-        st.dataframe(df_equipos_ordenados[['escudos', 'Posición', 'Equipo', 'Puntos', 'victorias', 'empates', 'derrotas', 'GF', 'GC', 'DFG']], height=800, use_container_width=True)
+        st.dataframe(df_equipos_ordenados[['escudos', 'Posición', 'Equipo', 'Puntos', 'victorias', 'empates', 'derrotas', 'GF', 'GC', 'DFG']], height=700, use_container_width=True)
 
